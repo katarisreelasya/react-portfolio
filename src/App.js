@@ -9,10 +9,10 @@ import Footer from "./scenes/Footer";
 import LineGradient from "./components/LineGradient";
 import { useEffect, useState } from "react";
 import useMediaQuery from "./hooks/useMediaQuery";
-import CertificationSection from './scenes/CertificationSection';
+import CertificationSection from "./scenes/CertificationSection";
 
 function App() {
-  const [selectedPage, setSelectedPage] = useState('home');
+  const [selectedPage, setSelectedPage] = useState("home");
   const [isTopOfPage, setIsTopOfPage] = useState(true);
   const isAboveMediumScreens = useMediaQuery("(min-width: 1060px)");
 
@@ -20,15 +20,19 @@ function App() {
     const handleScroll = () => {
       if (window.scrollY === 0) setIsTopOfPage(true);
       if (window.scrollY !== 0) setIsTopOfPage(false);
-    }
+    };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
-    <div className="app  bg-deep-blue">
-      <Navbar isTopOfPage={isTopOfPage} selectedPage={selectedPage} setSelectedPage={setSelectedPage} />
-      <div className="w-5/6 mx-auto md:h-full">
+    <div className="app bg-deep-blue">
+      <Navbar
+        isTopOfPage={isTopOfPage}
+        selectedPage={selectedPage}
+        setSelectedPage={setSelectedPage}
+      />
+      <div className="w-5/6 mx-auto md:h-full" id="home">
         {isAboveMediumScreens && (
           <DotGroup
             selectedPage={selectedPage}
@@ -38,30 +42,28 @@ function App() {
         <Landing setSelectedPage={setSelectedPage} />
       </div>
       <LineGradient />
-      <div className="w-5/6 mx-auto md:h-full">
+      <div className="w-5/6 mx-auto md:h-full" id="about">
         <About />
       </div>
       <LineGradient />
-      <div className="w-5/6 mx-auto md:h-full">
+      <div className="w-5/6 mx-auto md:h-full" id="skills">
         <MySkills />
       </div>
-      <br /><br /><br />
       <LineGradient />
-      <div className="w-5/6 mx-auto">
-        <Projects />
-      </div>
-      <br /><br /><br />
-      <LineGradient />
-      <div className="w-5/6 mx-auto">
+      <div className="w-5/6 mx-auto" id="certifications">
         <CertificationSection />
       </div>
       <LineGradient />
-      <div className="w-5/6 mx-auto">
+      <div className="w-5/6 mx-auto" id="projects">
+        <Projects />
+      </div>
+      <LineGradient />
+      <div className="w-5/6 mx-auto" id="contact">
         <Contact />
       </div>
       <Footer />
     </div>
   );
-};
+}
 
 export default App;

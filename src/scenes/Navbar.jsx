@@ -24,7 +24,7 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }) => {
 
   // Update selected page based on scroll position
   const handleScroll = () => {
-    const sections = ["home", "about", "skills","CertificationSection", "projects", "contact"];
+    const sections = ["home", "about", "skills", "Certifications", "projects", "contact"];
     const scrollPosition = window.scrollY;
 
     sections.forEach((section) => {
@@ -51,36 +51,13 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }) => {
         {/* DESKTOP NAV */}
         {isDesktop ? (
           <div className="flex justify-between gap-16 font-opensans text-sm font-semibold">
-            <Link
-              page="Home"
-              selectedPage={selectedPage}
-              setSelectedPage={setSelectedPage}
-            />
-            <Link
-              page="About"
-              selectedPage={selectedPage}
-              setSelectedPage={setSelectedPage}
-            />
-            <Link
-              page="Skills"
-              selectedPage={selectedPage}
-              setSelectedPage={setSelectedPage}
-            />
-            <Link
-              page="CertificationSection"
-              selectedPage={selectedPage}
-              setSelectedPage={setSelectedPage}
-            />
-            <Link
-              page="Projects"
-              selectedPage={selectedPage}
-              setSelectedPage={setSelectedPage}
-            />
-            <Link
-              page="Contact"
-              selectedPage={selectedPage}
-              setSelectedPage={setSelectedPage}
-            />
+            <Link page="Home" selectedPage={selectedPage} setSelectedPage={setSelectedPage} />
+<Link page="About" selectedPage={selectedPage} setSelectedPage={setSelectedPage} />
+<Link page="Skills" selectedPage={selectedPage} setSelectedPage={setSelectedPage} />
+<Link page="Certifications" selectedPage={selectedPage} setSelectedPage={setSelectedPage} />
+<Link page="Projects" selectedPage={selectedPage} setSelectedPage={setSelectedPage} />
+<Link page="Contact" selectedPage={selectedPage} setSelectedPage={setSelectedPage} />
+
           </div>
         ) : (
           <button
@@ -119,7 +96,7 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }) => {
                 setSelectedPage={setSelectedPage}
               />
               <Link
-                page="CertificationSection"
+                page="Certifications"
                 selectedPage={selectedPage}
                 setSelectedPage={setSelectedPage}
               />
