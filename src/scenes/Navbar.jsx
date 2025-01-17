@@ -115,12 +115,15 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }) => {
         )}
 
         {/* BUTTON CODE ADDED HERE */}
-        <AnchorLink
-          className="bg-gradient-rainblue text-deep-blue rounded-full py-2 px-7 font-semibold hover:bg-blue hover:text-white transition duration-500"
-          href="https://drive.google.com/file/d/17c-8JyMwwZxNwSEK6fdH9CLuEeDHkgQi/view?usp=drive_link"
-        >
-          Resume
-        </AnchorLink>
+        <a
+  className="bg-gradient-rainblue text-deep-blue rounded-full py-2 px-7 font-semibold hover:bg-blue hover:text-white transition duration-500"
+  href="https://drive.google.com/file/d/17c-8JyMwwZxNwSEK6fdH9CLuEeDHkgQi/view?usp=drive_link"
+  target="https://drive.google.com/file/d/17c-8JyMwwZxNwSEK6fdH9CLuEeDHkgQi/view?usp=drive_link" // Opens the link in a new tab
+  rel="noopener noreferrer" // Prevents security vulnerabilities
+>
+  Resume
+</a>
+
       </div>
     </nav>
   );
